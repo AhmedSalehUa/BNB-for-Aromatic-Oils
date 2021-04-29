@@ -93,10 +93,7 @@ public class HomeController implements Initializable {
         userNode.getItems().add(settings);
 
         try {
-            File directory = new File(System.getProperty("user.home") + "\\Documents\\logo.png");
-            System.out.println(directory.isFile());
-            System.out.println(directory.getAbsolutePath());
-            bnbLogo.setImage(new Image("file:///" + System.getProperty("user.home") + "\\Documents\\logo.png"));
+             bnbLogo.setImage(new Image(getClass().getResourceAsStream("/assets/icons/logo2.png")));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
