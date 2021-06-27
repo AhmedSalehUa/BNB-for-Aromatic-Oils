@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e908aa1f-6f18-4ed4-a53b-0266520cfc36">
 	<property name="ireport.zoom" value="2.853116706110003"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="427"/>
+	<property name="ireport.y" value="45"/>
 	<style name="style1" mode="Opaque" forecolor="#000000" backcolor="#CCCCCC" hAlign="Center" vAlign="Middle">
 		<pen lineWidth="0.25"/>
 		<box>
@@ -182,11 +182,11 @@
 			</staticText>
 			<staticText>
 				<reportElement style="style1" x="230" y="0" width="46" height="20" uuid="71a6955f-b30d-4e59-80a5-75a52bceb767"/>
-				<text><![CDATA[العمل الاضافي]]></text>
+				<text><![CDATA[الاضافي]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="style1" x="276" y="0" width="46" height="20" uuid="e150e81b-9254-4ade-98ef-de09333cac53"/>
-				<text><![CDATA[emp_leave]]></text>
+				<text><![CDATA[الانصراف]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="style1" x="322" y="0" width="46" height="20" uuid="5023cc8d-0ae5-40f2-abe1-47b82b7c11ff"/>
@@ -205,7 +205,7 @@
 				<text><![CDATA[اسم الميعاد]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="style1" x="506" y="0" width="46" height="20" uuid="7580fb55-ea70-4cf8-8642-f2473181aa55"/>
+				<reportElement style="style1" x="506" y="0" width="49" height="20" uuid="7580fb55-ea70-4cf8-8642-f2473181aa55"/>
 				<text><![CDATA[التاريخ]]></text>
 			</staticText>
 		</band>
@@ -213,51 +213,51 @@
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="0" y="0" width="46" height="20" uuid="31083b90-1fbb-4bfd-9411-dffbdb5e92a3"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="46" height="20" uuid="31083b90-1fbb-4bfd-9411-dffbdb5e92a3"/>
 				<textFieldExpression><![CDATA[$F{notes}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="46" y="0" width="46" height="20" uuid="4f4348fa-5834-469b-9ff1-3302e36950e8"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="46" y="0" width="46" height="20" uuid="4f4348fa-5834-469b-9ff1-3302e36950e8"/>
 				<textFieldExpression><![CDATA[$F{statue}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="92" y="0" width="46" height="20" uuid="8c8a351d-7d82-4207-89f3-313445367fc1"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="92" y="0" width="46" height="20" uuid="8c8a351d-7d82-4207-89f3-313445367fc1"/>
 				<textFieldExpression><![CDATA[$F{salary_calc}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="138" y="0" width="46" height="20" uuid="0c28499d-64ea-4c7a-984c-1da2980cde03"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="138" y="0" width="46" height="20" uuid="0c28499d-64ea-4c7a-984c-1da2980cde03"/>
 				<textFieldExpression><![CDATA[$F{earlyLeave}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="184" y="0" width="46" height="20" uuid="e93f9902-1f6b-492e-bc39-32162f4db195"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="184" y="0" width="46" height="20" uuid="e93f9902-1f6b-492e-bc39-32162f4db195"/>
 				<textFieldExpression><![CDATA[$F{late}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="230" y="0" width="46" height="20" uuid="c576cfcc-e92e-4b14-aecd-96a767d8490a"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="230" y="0" width="46" height="20" uuid="c576cfcc-e92e-4b14-aecd-96a767d8490a"/>
 				<textFieldExpression><![CDATA[$F{overtime}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="276" y="0" width="46" height="20" uuid="e7370979-17e6-4a4a-b2b1-2986a778859f"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="276" y="0" width="46" height="20" uuid="e7370979-17e6-4a4a-b2b1-2986a778859f"/>
 				<textFieldExpression><![CDATA[$F{emp_leave}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="322" y="0" width="46" height="20" uuid="fee7aeb1-1810-451a-9101-343033e9a71f"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="322" y="0" width="46" height="20" uuid="fee7aeb1-1810-451a-9101-343033e9a71f"/>
 				<textFieldExpression><![CDATA[$F{emp_att}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="368" y="0" width="46" height="20" uuid="24387373-42bc-492b-a11e-2a6b1767065c"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="368" y="0" width="46" height="20" uuid="24387373-42bc-492b-a11e-2a6b1767065c"/>
 				<textFieldExpression><![CDATA[$F{shift_end}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="414" y="0" width="46" height="20" uuid="0ca4109e-b468-49ae-b854-9564a45d8b76"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="414" y="0" width="46" height="20" uuid="0ca4109e-b468-49ae-b854-9564a45d8b76"/>
 				<textFieldExpression><![CDATA[$F{shift_start}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="460" y="0" width="46" height="20" uuid="e7dae07c-317c-40da-bf1a-3aa0cd36cb45"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="460" y="0" width="46" height="20" uuid="e7dae07c-317c-40da-bf1a-3aa0cd36cb45"/>
 				<textFieldExpression><![CDATA[$F{shift_name}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="style2" positionType="Float" x="506" y="0" width="46" height="20" uuid="ce2bd8de-9c54-4a55-884c-7caa5c88ad28"/>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="506" y="0" width="49" height="20" uuid="ce2bd8de-9c54-4a55-884c-7caa5c88ad28"/>
 				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
 			</textField>
 		</band>

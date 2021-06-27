@@ -37,7 +37,7 @@ public class BNBForAromaticOils extends Application {
             prefs = Preferences.userNodeForPackage(BNBForAromaticOils.class);
             String propertyValue = prefs.get(THEME, DEFAULT_THEME);
             Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-
+// root = FXMLLoader.load(getClass().getResource(HrScreenCalcAttend));
             Scene scene = new Scene(root);
 
             root.getStylesheets().add(getClass().getResource("/assets/styles/" + propertyValue + ".css").toExternalForm());

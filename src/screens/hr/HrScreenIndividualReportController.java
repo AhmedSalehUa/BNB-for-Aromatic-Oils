@@ -165,7 +165,7 @@ progress.setVisible(false);
                                 try {
                                     HashMap hash = new HashMap();
                                     Employee selectedItem = emp.getSelectionModel().getSelectedItem();
-                                    String allSalary = db.get.getTableData("SELECT  IFNULL(Sum(cast(`salary_calc` as UNSIGNED)),'0') from `att_report` WHERE `emp_id`='" + selectedItem.getId() + "'  and `date`>='" + dateFrom.getValue().format(format) + "'  and `date`<= '" + dateTo.getValue().format(format) + "'").getValueAt(0, 0).toString();
+                                    String allSalary = db.get.getTableData("SELECT  IFNULL( sum(convert(`salary_calc` , decimal(4,2))) ,'0') from `att_report` WHERE `emp_id`='" + selectedItem.getId() + "'  and `date`>='" + dateFrom.getValue().format(format) + "'  and `date`<= '" + dateTo.getValue().format(format) + "'").getValueAt(0, 0).toString();
                                     if (selectedItem.getSalary() == null) {
                                         hash.put("salarys", "0");
                                         hash.put("solfs", "0");
@@ -174,9 +174,9 @@ progress.setVisible(false);
                                     } else {
                                         if (Integer.parseInt(selectedItem.getSalary()) != 0) {
                                             double oneDaye = Integer.parseInt(selectedItem.getSalary()) / 30;
-                                            double salary = oneDaye * Double.parseDouble(allSalary);
+                                            double salary = Math.round((double)(oneDaye * Double.parseDouble(allSalary))*100)/100;
                                             System.out.println(salary);
-                                            String solfa = db.get.getTableData("SELECT IFNULL(Sum(cast(`amount` as UNSIGNED)),'0') from `att_employee_solfa` WHERE `emp_id`='" + selectedItem.getId() + "'  and `date`>='" + dateFrom.getValue().format(format) + "'  and `date`<= '" + dateTo.getValue().format(format) + "'").getValueAt(0, 0).toString();
+                                            String solfa = db.get.getTableData("SELECT IFNULL( sum(convert(`amount` , decimal(4,2))) ,'0') from `att_employee_solfa` WHERE `emp_id`='" + selectedItem.getId() + "'  and `date`>='" + dateFrom.getValue().format(format) + "'  and `date`<= '" + dateTo.getValue().format(format) + "'").getValueAt(0, 0).toString();
                                             double remaining = salary - Double.parseDouble(solfa);
                                             System.out.println(solfa);
                                             System.out.println(remaining);

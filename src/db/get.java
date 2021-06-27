@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package db;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import static assets.classes.statics.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -51,7 +41,7 @@ public class get {
             Class.forName("com.mysql.jdbc.Driver");
             url = "jdbc:mysql://" + prefs.get("database_id", "127.0.0.1") + ":3306/bnb?useUnicode=true&characterEncoding=UTF-8";
 
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex) { System.out.println(ex.getMessage());
             throw new Exception("error in database url");
         }
 
@@ -60,8 +50,10 @@ public class get {
     public static Connection getReportCon() throws Exception {
         try {
             setURL();
-            con = DriverManager.getConnection(url, "acapytradeahmedsaleh", "as01203904426");
-        } catch (SQLException ex) {
+            if (con == null) {
+                con = DriverManager.getConnection(url, "acapytradeahmedsaleh", "as01203904426");
+            }
+        } catch (SQLException ex) { System.out.println(ex.getMessage());
             throw new Exception("Error in connection to database ERROR Code: \n" + ex.getMessage());
         }
         return con;
@@ -70,8 +62,10 @@ public class get {
     public static boolean canCon() throws Exception {
         try {
             setURL();
-            con = DriverManager.getConnection(url, "acapytradeahmedsaleh", "as01203904426");
-        } catch (SQLException ex) {
+             if (con == null) {
+                con = DriverManager.getConnection(url, "acapytradeahmedsaleh", "as01203904426");
+            }
+        } catch (SQLException ex) { System.out.println(ex.getMessage());
             return false;
         }
         return true;
@@ -81,8 +75,10 @@ public class get {
 
         try {
             setURL();
-            con = DriverManager.getConnection(url, "acapytradeahmedsaleh", "as01203904426");
-        } catch (SQLException ex) {
+            if (con == null) {
+                con = DriverManager.getConnection(url, "acapytradeahmedsaleh", "as01203904426");
+            }
+        } catch (SQLException ex) { System.out.println(ex.getMessage());
             throw new Exception("Error in connection to database ERROR Code: \n" + ex.getMessage());
 
         }
@@ -108,9 +104,9 @@ public class get {
                 }
                 model.addRow(rows);
             }
-            con.close();
+//            con.close();
             return table;
-        } catch (SQLException ex) {
+        } catch (SQLException ex) { System.out.println(ex.getMessage());
             throw new Exception(ex.getMessage());
         }
     }
@@ -120,9 +116,9 @@ public class get {
             setConnection();
             Statement stmt = con.createStatement();
             stmt.execute(statement);
-            con.close();
+//            con.close();
             return true;
-        } catch (SQLException ex) {
+        } catch (SQLException ex) { System.out.println(ex.getMessage());
             throw new Exception(ex.getMessage());
 
         }
@@ -133,9 +129,9 @@ public class get {
         try {
             setConnection();
             statement.execute();
-            con.close();
+//            con.close();
             return true;
-        } catch (SQLException ex) {
+        } catch (SQLException ex) { System.out.println(ex.getMessage());
             throw new Exception(ex.getMessage());
 
         }
@@ -146,9 +142,9 @@ public class get {
         try {
             setConnection();
             statement.execute();
-            con.close();
+//            con.close();
             return true;
-        } catch (SQLException ex) {
+        } catch (SQLException ex) { System.out.println(ex.getMessage());
             throw new Exception(ex.getMessage());
         }
 
@@ -159,7 +155,7 @@ public class get {
             setConnection();
             PreparedStatement stat = con.prepareStatement(statement);
             return stat;
-        } catch (SQLException ex) {
+        } catch (SQLException ex) { System.out.println(ex.getMessage());
             throw new Exception(ex.getMessage());
 
         }
@@ -173,6 +169,7 @@ public class get {
             con.setAutoCommit(false);
             return st;
         } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
             throw new Exception(ex.getMessage());
         }
 
