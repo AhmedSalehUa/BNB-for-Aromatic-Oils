@@ -649,13 +649,24 @@ public class HrScreenCalcAttendController implements Initializable {
                                     }
 
                                     int totalLate = Integer.parseInt(empAtt.getEarlyLeave()) + Integer.parseInt(empAtt.getEmpLate());
-                                    empAtt.setSalaryValue(Long.toString((total_minutes_of_shift + overtimeOfEmp) - totalLate));
-                                    if (empAtt.getNotes() == null) {
-                                        empAtt.setNotes("تاخير " + totalLate);
-                                    } else {
-                                        empAtt.setNotes(empAtt.getNotes() + "تاخير " + totalLate);
+                                    long total_minutes_of_work = MINUTES.between(LocalTime.parse(empAtt.getEmpAttend()), LocalTime.parse(empAtt.getEmpLeave()));
+                                    System.out.println("worked: " + total_minutes_of_work + " shift: " + total_minutes_of_shift);
+                                    System.out.println("empAtt.getEmpAttend():" + empAtt.getEmpAttend());
+                                    System.out.println("empAtt.getEmpLeave()" + empAtt.getEmpLeave());
+                                    if (!empAtt.getEmpAttend().isEmpty() && !empAtt.getEmpLeave().isEmpty()) {
+                                        System.out.println("here");
+                                        if (total_minutes_of_work >= total_minutes_of_shift) {
+                                            System.out.println("here2");empAtt.setSalaryValue(Long.toString(total_minutes_of_shift + overtimeOfEmp));
+                                        } else {
+                                            System.out.println("here3");
+                                            empAtt.setSalaryValue(Long.toString((total_minutes_of_shift + overtimeOfEmp) - totalLate));
+                                            if (empAtt.getNotes() == null) {
+                                                empAtt.setNotes("تاخير " + totalLate);
+                                            } else {
+                                                empAtt.setNotes(empAtt.getNotes() + "تاخير " + totalLate);
+                                            }
+                                        }
                                     }
-
                                     LateRules cases = null;
                                     for (LateRules lt : lateRule) {
                                         if (lt.getShift() == sh.getId()) {
@@ -897,7 +908,7 @@ public class HrScreenCalcAttendController implements Initializable {
                                     //            System.out.println("case 3");
                                 }
                             }
-                            if (totalCom < total) {
+                            if (Math.abs(totalCom) < Math.abs(total)) {
                                 id = idcom;
                                 minstart = minstartcom;
                                 minend = minendcom;

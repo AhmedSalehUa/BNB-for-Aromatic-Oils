@@ -16,7 +16,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1360.0" stylesheets="@../../assets/styles/darkMode.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screens.hr.HrScreenCalcAttendController">
    <children>
-      <HBox alignment="CENTER_LEFT" layoutY="6.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER_LEFT" layoutY="6.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="668.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label text="الحالة :">
                <font>

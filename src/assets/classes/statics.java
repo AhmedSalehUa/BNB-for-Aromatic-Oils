@@ -41,7 +41,7 @@ public class statics {
 
     public static String PYTHON_PATH = "py_path";
     // public static String PYTHON_PATH_DEFAULT = "python D:\\Downloads\\zk\\pyzk-master\\pyzk-master\\";
-    public static String PYTHON_PATH_DEFAULT = "python \"C:\\Program Files (x86)\\bnb\\attSdk\\";
+    public static String PYTHON_PATH_DEFAULT = "python \"C:\\Program Files (x86)\\acapy trade\\attSdk\\";
     //screens
     public static String Login = "/main/Login.fxml";
 
